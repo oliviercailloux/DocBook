@@ -1,1 +1,3 @@
 out.log
+target/
+src/main/resources/docbook/
