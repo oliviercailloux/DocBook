@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>io.github.oliviercailloux</groupId>
+    <artifactId>pom</artifactId>
+    <version>0.0.24</version>
+  </parent>
+	<artifactId>docbook</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack</id>
+            <phase>package</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <!-- <groupId>net.sf.docbook</groupId>
+                  <artifactId>docbook-xsl</artifactId>
+                  <version>1.79.1</version>
+                  <classifier>resources</classifier>
+              <type>zip</type> -->
+                  <groupId>junit</groupId>
+                  <artifactId>junit</artifactId>
+                  <version>3.8.1</version>
+                  <type>jar</type>
+                  <includes>**/*.class,**/*.xml</includes>
+                  <excludes>**/*test.class</excludes>
+                </artifactItem>
+              </artifactItems>
+              <includes>**/*.java</includes>
+              <excludes>**/*.properties</excludes>
+              <outputDirectory>${project.basedir}/src/main/resources</outputDirectory>
+            </configuration>
+          </execution>
+         <!-- <execution>
+            <id>extract</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <dependency>
+            </dependency>
+            <configuration>
+              <failOnMissingClassifierArtifact>false</failOnMissingClassifierArtifact>
+              <outputDirectory>${project.build.directory}/sources</outputDirectory>
+            </configuration>
+          </execution> -->
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
