@@ -1,6 +1,6 @@
 package io.github.oliviercailloux.docbook;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -12,7 +12,7 @@ public class MyTests {
 
 	@Test
 	void testSomething() throws Exception {
-		LOGGER.info("Started tests.");
-		assertTrue(true);
+    assertNotNull(MyTests.class.getResourceAsStream("/logback.xml"));
+    assertNotNull(MyTests.class.getResourceAsStream("catalog.xml"));
 	}
 }
