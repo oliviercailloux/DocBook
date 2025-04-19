@@ -29,9 +29,30 @@
                   <version>1.79.1</version>
                   <classifier>resources</classifier>
                   <type>zip</type>
+                  <excludes>docbook/AUTHORS,docbook/BUGS,docbook/COPYING,docbook/INSTALL,docbook/Makefile,docbook/NEWS*,docbook/TODO,docbook/VERSION,docbook/install.sh</excludes>
                 </artifactItem>
               </artifactItems>
-              <outputDirectory>${project.basedir}/src/main/resources/io/github/oliviercailloux/</outputDirectory>
+              <outputDirectory>src/main/resources/io/github/oliviercailloux/</outputDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-doc</id>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>net.sf.docbook</groupId>
+                  <artifactId>docbook-xsl</artifactId>
+                  <version>1.79.1</version>
+                  <classifier>resources</classifier>
+                  <type>zip</type>
+                  <overWrite>true</overWrite>
+                  <includes>docbook/AUTHORS,docbook/BUGS,docbook/COPYING,docbook/INSTALL,docbook/Makefile,docbook/NEWS*,docbook/TODO,docbook/VERSION,docbook/install.sh</includes>
+                </artifactItem>
+              </artifactItems>
+              <outputDirectory>doc/</outputDirectory>
             </configuration>
           </execution>
         </executions>

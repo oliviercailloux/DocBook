@@ -1,3 +1,4 @@
 out.log
 target/
 src/main/resources/io/github/oliviercailloux/docbook/
+doc/docbook/
