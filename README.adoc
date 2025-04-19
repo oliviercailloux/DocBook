@@ -2,3 +2,15 @@
 
 == Clean
 mvn clean; rm -R src/main/resources/io/
+
+== Build
+mvn test
+
+== Zip dependencies in Maven
+Invoking `mvn org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath` includes the zip type dependency.
+Invoking `mvn org.codehaus.mojo:exec-maven-plugin:3.5.0:java -Dexec.mainClass="…"` does not see the resources in the zip type (https://lists.apache.org/thread/h7bdsd6o9gbxqtsyq336rwrrr2zf1w4r[as expected], IIUC).
+
+== Classified zip dependency in IDEs
+vscode fails to see the zip type dependency with classifier in the classpath: the classpath that it builds automatically does not include it and it does not list this dependency in the project settings view.
+
+IntelliJ IDEA also https://youtrack.jetbrains.com/issue/IDEA-148573/An-option-to-add-maven-artifacts-with-classifiers-into-classpath[seems to meet difficulties].
