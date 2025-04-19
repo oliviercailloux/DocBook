@@ -12,7 +12,8 @@ public class MyTests {
 
 	@Test
 	void testSomething() throws Exception {
-    assertNotNull(MyTests.class.getResourceAsStream("/logback.xml"));
-    assertNotNull(MyTests.class.getResourceAsStream("catalog.xml"));
+    assertNotNull(MyTests.class.getResource("/io/github/oliviercailloux/docbook/catalog.xml"));
+    assertNotNull(MyTests.class.getResource("catalog.xml"));
+    assertNotNull(MyTests.class.getResource("fo/build.xml"));
 	}
 }
