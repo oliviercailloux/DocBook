@@ -14,6 +14,6 @@ public class MyTests {
 	void testSomething() throws Exception {
     assertNotNull(MyTests.class.getResource("/io/github/oliviercailloux/docbook/catalog.xml"));
     assertNotNull(MyTests.class.getResource("catalog.xml"));
-    assertNotNull(MyTests.class.getResource("fo/build.xml"));
+    assertNotNull(MyTests.class.getResource("fo/fo.xsl"));
 	}
 }

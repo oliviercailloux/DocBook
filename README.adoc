@@ -1,0 +1,4 @@
+= Docbook
+
+== Clean
+mvn clean; rm -R src/main/resources/io/
