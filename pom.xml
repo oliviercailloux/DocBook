@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.github.oliviercailloux</groupId>
@@ -38,7 +40,7 @@
             <goals>
               <goal>copy-resources</goal>
             </goals>
-            <phase>process-resources</phase>
+            <phase>generate-sources</phase>
             <configuration>
               <resources>
                 <resource>
@@ -56,7 +58,6 @@
                   </includes>
                 </resource>
               </resources>
-              <!-- <outputDirectory>src/main/resources/io/github/oliviercailloux/</outputDirectory> -->
               <outputDirectory>doc/docbook/</outputDirectory>
             </configuration>
           </execution>
@@ -65,7 +66,7 @@
             <goals>
               <goal>copy-resources</goal>
             </goals>
-            <phase>process-resources</phase>
+            <phase>generate-sources</phase>
             <configuration>
               <resources>
                 <resource>
@@ -87,73 +88,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>      <!--
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>truezip-maven-plugin</artifactId>
-        <version>1.2</version>
-        <executions>
-          <execution>
-            <id>copy-out-files</id>
-            <goals>
-              <goal>copy</goal>
-            </goals>
-            <configuration>
-              <fileset>
-                <directory>${archive}/META-INF/maven</directory>
-                <includes>
-                  <include>**/pom.properties</include>
-                </includes>
-              </fileset>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin> -->
-      <!-- <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>unpack</id>
-            <goals>
-              <goal>unpack</goal>
-            </goals>
-            <configuration>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>net.sf.docbook</groupId>
-                  <artifactId>docbook-xsl</artifactId>
-                  <version>1.79.1</version>
-                  <classifier>resources</classifier>
-                  <type>zip</type>
-      <excludes>docbook/AUTHORS,docbook/BUGS,docbook/COPYING,docbook/INSTALL,docbook/Makefile,docbook/NEWS*,docbook/TODO,docbook/VERSION,docbook/install.sh</excludes>
-                </artifactItem>
-              </artifactItems>
-              <outputDirectory>src/main/resources/io/github/oliviercailloux/</outputDirectory>
-            </configuration>
-          </execution>
-          <execution>
-            <id>unpack-doc</id>
-            <goals>
-              <goal>unpack</goal>
-            </goals>
-            <configuration>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>net.sf.docbook</groupId>
-                  <artifactId>docbook-xsl</artifactId>
-                  <version>1.79.1</version>
-                  <classifier>resources</classifier>
-                  <type>zip</type>
-                  <overWrite>true</overWrite>
-      <includes>docbook/AUTHORS,docbook/BUGS,docbook/COPYING,docbook/INSTALL,docbook/Makefile,docbook/NEWS*,docbook/TODO,docbook/VERSION,docbook/install.sh</includes>
-                </artifactItem>
-              </artifactItems>
-              <outputDirectory>doc/</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin> -->
+      </plugin>
     </plugins>
   </build>
 </project>
