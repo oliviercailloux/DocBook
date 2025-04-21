@@ -1,4 +1,11 @@
 = DocBook
+:groupId: io.github.oliviercailloux
+:artifactId: docbook
+:repository: DocBook
+
+image:https://github.com/oliviercailloux/{artifactId}/workflows/Maven%20CI%20workflow/badge.svg["Maven CI", link="https://github.com/oliviercailloux/{repository}/actions"]
+image:https://maven-badges.herokuapp.com/maven-central/{groupId}/{artifactId}/badge.svg["Artifact on Maven Central", link="https://central.sonatype.com/artifact/{groupId}/{artifactId}"]
+image:http://www.javadoc.io/badge/{groupId}/{artifactId}.svg["Javadocs", link="http://www.javadoc.io/doc/{groupId}/{artifactId}"]
 
 It seems that DocBook XSL 1 has https://github.com/docbook/xslt10-stylesheets/issues/234[never published] the latest version to Maven Central. Another problem is that the published version is a zip type dependency, which creates problems with Maven and IDEs.
 
