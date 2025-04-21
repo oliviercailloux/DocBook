@@ -1,7 +1,7 @@
 = Docbook
 
 == Clean
-mvn clean; rm -R src/main/resources/io/
+mvn clean; rm -R src/main/resources/io/; rm -R doc/docbook/
 
 == Build
 mvn test

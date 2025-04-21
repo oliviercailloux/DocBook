@@ -13,6 +13,7 @@ public class MyTests {
 	@Test
 	void testSomething() throws Exception {
     assertNotNull(MyTests.class.getResource("/io/github/oliviercailloux/docbook/catalog.xml"));
+    assertNotNull(DocBookCatalog.URI);
     assertNotNull(MyTests.class.getResource("catalog.xml"));
     assertNotNull(MyTests.class.getResource("fo/fo.xsl"));
 	}

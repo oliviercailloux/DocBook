@@ -13,6 +13,105 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>io.github.download-maven-plugin</groupId>
+        <artifactId>download-maven-plugin</artifactId>
+        <version>2.0.0</version>
+        <executions>
+          <execution>
+            <id>download-docbook-zip</id>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <url>
+            https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-1.79.2.zip</url>
+          <unpack>true</unpack>
+          <outputDirectory>${project.build.directory}</outputDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <id>docbook-to-doc</id>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <phase>process-resources</phase>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>${project.build.directory}/docbook-xsl-1.79.2/</directory>
+                  <includes>
+                    <include>AUTHORS</include>
+                    <include>BUGS</include>
+                    <include>COPYING</include>
+                    <include>INSTALL</include>
+                    <include>Makefile</include>
+                    <include>NEWS*</include>
+                    <include>TODOS</include>
+                    <include>VERSION</include>
+                    <include>install.sh</include>
+                  </includes>
+                </resource>
+              </resources>
+              <!-- <outputDirectory>src/main/resources/io/github/oliviercailloux/</outputDirectory> -->
+              <outputDirectory>doc/docbook/</outputDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>docbook-to-resources</id>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <phase>process-resources</phase>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>${project.build.directory}/docbook-xsl-1.79.2/</directory>
+                  <excludes>
+                    <exclude>AUTHORS</exclude>
+                    <exclude>BUGS</exclude>
+                    <exclude>COPYING</exclude>
+                    <exclude>INSTALL</exclude>
+                    <exclude>Makefile</exclude>
+                    <exclude>NEWS*</exclude>
+                    <exclude>TODOS</exclude>
+                    <exclude>VERSION</exclude>
+                    <exclude>install.sh</exclude>
+                  </excludes>
+                </resource>
+              </resources>
+              <outputDirectory>src/main/resources/io/github/oliviercailloux/docbook/</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>      <!--
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>truezip-maven-plugin</artifactId>
+        <version>1.2</version>
+        <executions>
+          <execution>
+            <id>copy-out-files</id>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <fileset>
+                <directory>${archive}/META-INF/maven</directory>
+                <includes>
+                  <include>**/pom.properties</include>
+                </includes>
+              </fileset>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin> -->
+      <!-- <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
@@ -29,7 +128,7 @@
                   <version>1.79.1</version>
                   <classifier>resources</classifier>
                   <type>zip</type>
-                  <excludes>docbook/AUTHORS,docbook/BUGS,docbook/COPYING,docbook/INSTALL,docbook/Makefile,docbook/NEWS*,docbook/TODO,docbook/VERSION,docbook/install.sh</excludes>
+      <excludes>docbook/AUTHORS,docbook/BUGS,docbook/COPYING,docbook/INSTALL,docbook/Makefile,docbook/NEWS*,docbook/TODO,docbook/VERSION,docbook/install.sh</excludes>
                 </artifactItem>
               </artifactItems>
               <outputDirectory>src/main/resources/io/github/oliviercailloux/</outputDirectory>
@@ -49,14 +148,14 @@
                   <classifier>resources</classifier>
                   <type>zip</type>
                   <overWrite>true</overWrite>
-                  <includes>docbook/AUTHORS,docbook/BUGS,docbook/COPYING,docbook/INSTALL,docbook/Makefile,docbook/NEWS*,docbook/TODO,docbook/VERSION,docbook/install.sh</includes>
+      <includes>docbook/AUTHORS,docbook/BUGS,docbook/COPYING,docbook/INSTALL,docbook/Makefile,docbook/NEWS*,docbook/TODO,docbook/VERSION,docbook/install.sh</includes>
                 </artifactItem>
               </artifactItems>
               <outputDirectory>doc/</outputDirectory>
             </configuration>
           </execution>
         </executions>
-      </plugin>
+      </plugin> -->
     </plugins>
   </build>
 </project>
