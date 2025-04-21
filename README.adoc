@@ -1,10 +1,14 @@
-= Docbook
+= DocBook
+
+It seems that DocBook XSL 1 has https://github.com/docbook/xslt10-stylesheets/issues/234[never published] the latest version to Maven Central. Another problem is that the published version is a zip type dependency, which creates problems with Maven and IDEs.
+
+This repository publishes the last version of DocBook XSL 1 to Maven Central.
 
 == Clean
-mvn clean; rm -R src/main/resources/io/; rm -R doc/docbook/
+`mvn clean; rm -R src/main/resources/io/; rm -R doc/docbook/`
 
 == Build
-mvn test
+`mvn package`
 
 == Zip dependencies in Maven
 Invoking `mvn org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath` includes the zip type dependency.
