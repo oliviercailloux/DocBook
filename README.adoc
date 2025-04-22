@@ -11,6 +11,8 @@ It seems that DocBook XSL 1 has https://github.com/docbook/xslt10-stylesheets/is
 
 This repository publishes the last version of DocBook XSL 1 to Maven Central.
 
+API is _not_ stable. (Open an issue here if you are interested in consuming this artifact.)
+
 == Clean
 `mvn clean; rm -R src/main/resources/io/; rm -R doc/docbook/`
 
