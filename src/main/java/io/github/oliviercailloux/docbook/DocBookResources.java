@@ -15,11 +15,11 @@ import org.docbook.schemas.docbook.DocBook;
  */
 public class DocBookResources {
   /** The URI of the DocBook 5.0 XSD in the class path */
-  public static final URI XSD_5_0_URI =
-      java.net.URI.create(Resources.getResource(DocBookResources.class, DocBook.DOCBOOK_5_0_XSD_PATH).toString());
+  public static final URI XSD_5_0_URI = java.net.URI.create(
+      Resources.getResource(DocBookResources.class, DocBook.DOCBOOK_5_0_XSD_PATH).toString());
   /** The URI of the DocBook 5.1 XSD in the class path */
-  public static final URI RNG_5_1_URI =
-      java.net.URI.create(Resources.getResource(DocBookResources.class, DocBook.DOCBOOK_5_1_RNG_PATH).toString());
+  public static final URI RNG_5_1_URI = java.net.URI.create(
+      Resources.getResource(DocBookResources.class, DocBook.DOCBOOK_5_1_RNG_PATH).toString());
 
   /** The URI of the DocBook XSLT 1 Catalog in the class path */
   public static URI CATALOG_URI =

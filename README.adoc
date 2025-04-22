@@ -17,6 +17,9 @@ This repository publishes the last version of DocBook XSL 1 to Maven Central.
 == Build
 `mvn package`
 
+== Release
+`mvn -P "release, strict" deploy`
+
 == Zip dependencies in Maven
 Invoking `mvn org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath` includes the zip type dependency.
 Invoking `mvn org.codehaus.mojo:exec-maven-plugin:3.5.0:java -Dexec.mainClass="…"` does not see the resources in the zip type (https://lists.apache.org/thread/h7bdsd6o9gbxqtsyq336rwrrr2zf1w4r[as expected], IIUC).
