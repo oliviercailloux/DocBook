@@ -25,3 +25,43 @@ Invoking `mvn org.codehaus.mojo:exec-maven-plugin:3.5.0:java -Dexec.mainClass="�
 vscode fails to see the zip type dependency with classifier in the classpath: the classpath that it builds automatically does not include it and it does not list this dependency in the project settings view.
 
 IntelliJ IDEA also https://youtrack.jetbrains.com/issue/IDEA-148573/An-option-to-add-maven-artifacts-with-classifiers-into-classpath[seems to meet difficulties].
+
+== Flavors
+=== DocBook schema
+“The version 5.0 release is a complete rewrite of DocBook in RELAX NG. The intent of this rewrite is to produce a schema that is true to the spirit of DocBook while simultaneously removing inconsistencies that have arisen as a natural consequence of DocBook's long, slow evolution. The Technical Committee has taken this opportunity to simplify a number of content models and tighten constraints where RELAX NG makes that possible.
+The most significant change for the 5.1 version is the addition of assemblies to DocBook to better support modular authoring practices.
+The Technical Committee provides the DocBook 5.0 and 5.1 schemas in other schema languages, including W3C XML Schema and an XML DTD, but the RELAX NG Schema is the normative schema.”
+https://docbook.org/schemas/5x[DocBook V5.x]
+
+- https://tdg.docbook.org/[DocBook 5: The Definitive Guide]
+- Online https://cdn.docbook.org/schema/[resources]. (Use Public ID : `https://docs.oasis-open.org/docbook/docbook/v5.1/os/rng/docbook.rng`)
+- https://github.com/docbook/docbook[repository]
+
+=== XSLT 1
+The DocBook XSLT 1.0 Stylesheets https://github.com/docbook/xslt10-stylesheets[repository].
+
+- Online https://cdn.docbook.org/release/xsl/1.79.2/[resources].
+- https://packages.debian.org/search?suite=all&searchon=names&keywords=docbook[Debian packages].
+- https://stackoverflow.com/questions/17929158/saxon-doesnt-support-saxonoutput-anymore
+- https://saxonica.plan.io/issues/5665
+
+=== XSLT 2
+The DocBook XSLT 2.0 stylesheets https://github.com/docbook/xslt20-stylesheets[repository].
+“These stylesheets represent a different line of development from the XSLT 1.0 stylesheets.
+In July, 2020, the DocBook xslTNG Stylesheets were first published. Those stylesheets are, effectively, replacements for these. 
+Continued development of the 2.0 stylesheets is unlikely.”
+
+- https://norman.walsh.name/2011/08/25/docbook-xslt-2[DocBook XSLT 2.0 Stylesheets released], Aug 2011
+- Maven Central https://central.sonatype.com/artifact/org.docbook/docbook-xslt2/versions[`org.docbook`:`docbook-xslt2`], latest 2.5.0, 2020
+
+=== XSLT 3
+The DocBook xslTNG (The Next Generation) https://github.com/docbook/xslTNG/[repository].
+“These are XSLT 3.0 stylesheets for DocBook. They transform DocBook XML documents into clean, semantically rich HTML5. A CSS stylesheet suitable for online presentation is included. Producing high quality print output with a paged media capable CSS processor is also supported.” https://xsltng.docbook.org/[DocBook xslTNG]
+
+“The stylesheets can also be used to produce paged media such as PDF files. This works by having a slightly different HTML transformation initially, and then by further transforming the HTML so that it can be formatted with an appropriate CSS formatter to produce paged output. This is similar, but not the same as producing XSL Formatting Objects and then transforming those.”
+
+“There are no plans at the moment to produce XSL FO stylesheets.”
+
+== Maven Central
+- group id https://central.sonatype.com/search?q=org.docbook&sort=published[`org.docbook`] (recent artifacts)
+- group id https://central.sonatype.com/search?q=net.sf.docbook&sort=published[`net.sf.docbook`] (old artifacts)
