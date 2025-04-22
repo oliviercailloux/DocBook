@@ -94,4 +94,11 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.docbook</groupId>
+      <artifactId>schemas-docbook</artifactId>
+      <version>5.2</version>
+    </dependency>
+  </dependencies>
 </project>
