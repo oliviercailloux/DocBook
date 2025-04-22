@@ -6,10 +6,13 @@
     <artifactId>pom</artifactId>
     <version>0.0.24</version>
   </parent>
-  <name>DocBook XSLT 1.0 Stylesheets</name>
-  <description>The last version of the DocBook XSLT 1.0 Stylesheets</description>
   <artifactId>docbook</artifactId>
   <version>0.0.3-SNAPSHOT</version>
+  <name>DocBook XSLT 1.0 Stylesheets</name>
+  <description>The last version of the DocBook XSLT 1.0 Stylesheets</description>
+  <properties>
+    <github-repository>${project.name}</github-repository>
+  </properties>
   <build>
     <plugins>
       <plugin>
