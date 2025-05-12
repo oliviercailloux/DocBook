@@ -7,7 +7,7 @@
     <version>0.0.25</version>
   </parent>
   <artifactId>docbook</artifactId>
-  <version>0.0.4</version>
+  <version>0.0.5-SNAPSHOT</version>
   <name>DocBook XSLT 1.0 Stylesheets</name>
   <description>The last version of the DocBook XSLT 1.0 Stylesheets</description>
   <properties>
