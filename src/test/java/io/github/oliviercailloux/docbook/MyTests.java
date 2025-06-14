@@ -2,8 +2,6 @@ package io.github.oliviercailloux.docbook;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import com.google.common.io.Resources;
-import org.docbook.schemas.docbook.DocBook;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
