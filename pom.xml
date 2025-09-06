@@ -103,5 +103,15 @@
       <artifactId>schemas-docbook</artifactId>
       <version>5.2</version>
     </dependency>
+    <dependency>
+      <groupId>org.docbook</groupId>
+      <artifactId>docbook-xslTNG</artifactId>
+      <version>2.6.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.xmlresolver</groupId>
+      <artifactId>xmlresolver</artifactId>
+      <version>6.0.19</version>
+    </dependency>
   </dependencies>
 </project>
