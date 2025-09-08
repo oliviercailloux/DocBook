@@ -23,26 +23,25 @@
         <version>2.0.0</version>
         <executions>
           <execution>
-            <id>download-docbook-zip</id>
+            <id>download-docbook-1-zip</id>
             <goals>
               <goal>wget</goal>
             </goals>
             <phase>generate-sources</phase>
+            <configuration>
+              <url>
+                https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-1.79.2.zip</url>
+              <unpack>true</unpack>
+              <outputDirectory>${project.build.directory}</outputDirectory>
+            </configuration>
           </execution>
-        </executions>
-        <configuration>
-          <url>
-            https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-1.79.2.zip</url>
-          <unpack>true</unpack>
-          <outputDirectory>${project.build.directory}</outputDirectory>
-        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
         <version>3.3.1</version>
         <executions>
           <execution>
-            <id>docbook-to-doc</id>
+            <id>docbook-1-to-doc</id>
             <goals>
               <goal>copy-resources</goal>
             </goals>
@@ -68,7 +67,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>docbook-to-resources</id>
+            <id>docbook-1-to-resources</id>
             <goals>
               <goal>copy-resources</goal>
             </goals>
@@ -90,7 +89,7 @@
                   </excludes>
                 </resource>
               </resources>
-              <outputDirectory>src/main/resources/io/github/oliviercailloux/docbook/</outputDirectory>
+              <outputDirectory>src/main/resources/io/github/oliviercailloux/docbook/xslt1/</outputDirectory>
             </configuration>
           </execution>
         </executions>
