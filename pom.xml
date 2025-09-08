@@ -35,6 +35,20 @@
               <outputDirectory>${project.build.directory}</outputDirectory>
             </configuration>
           </execution>
+          <execution>
+            <id>download-docbook-3-zip</id>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <url>
+                https://github.com/docbook/xslTNG/releases/download/2.6.0/docbook-xslTNG-nosaxon-2.6.0.zip</url>
+              <unpack>true</unpack>
+              <outputDirectory>${project.build.directory}</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
@@ -90,6 +104,24 @@
                 </resource>
               </resources>
               <outputDirectory>src/main/resources/io/github/oliviercailloux/docbook/xslt1/</outputDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>docbook-3-to-resources</id>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>${project.build.directory}/docbook-xslTNG-nosaxon-2.6.0/resources/</directory>
+                  <excludes>
+                    <exclude>scss/</exclude>
+                  </excludes>
+                </resource>
+              </resources>
+              <outputDirectory>src/main/resources/io/github/oliviercailloux/docbook/xslt3/resources/</outputDirectory>
             </configuration>
           </execution>
         </executions>
