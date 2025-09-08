@@ -25,10 +25,13 @@ public class DocBookResources {
   public static final URI RNG_5_1_URI = java.net.URI.create(
       Resources.getResource(DocBookResources.class, DocBook.DOCBOOK_5_1_RNG_PATH).toString());
 
-  /** The public id URI of the main DocBook to FO stylesheet. */
+  /** The public id URI of the DocBook to FO XSLT 1 stylesheet. */
   public static final URI XSLT_1_FO_URI =
       java.net.URI.create("http://cdn.docbook.org/release/xsl/1.79.2/fo/docbook.xsl");
-  /** The public id URI of the main DocBook to HTML stylesheet. */
+  /** The public id URI of the DocBook to HTML XSLT 3 (xslTNG). */
+  public static final URI XSLTNG_HTML_URI =
+      java.net.URI.create("https://cdn.docbook.org/release/xsltng/2.6.0/xslt/docbook.xsl");
+  /** The public id URI of the DocBook to HTML XSLT 1 stylesheet. */
   public static final URI XSLT_1_HTML_URI =
       java.net.URI.create("http://cdn.docbook.org/release/xsl/1.79.2/html/docbook.xsl");
 
@@ -44,5 +47,7 @@ public class DocBookResources {
   /** The DocBook XSLT 1 Catalog resolver, reading from the class path */
   public static CatalogResolver RESOLVER_1 = CatalogManager.catalogResolver(CATALOG_1);
   /** The DocBook XSLT XML resolver, reading from the XSLT 1 and 3 catalogs from the class path */
-  public static XMLResolver XML_RESOLVER = new XMLResolver(new XMLResolverConfiguration(ImmutableList.of(DocBookResources.CATALOG_1_URI.toString(), DocBookResources.CATALOG_3_URI.toString())));
+  public static XMLResolver XML_RESOLVER = new XMLResolver(
+      new XMLResolverConfiguration(ImmutableList.of(DocBookResources.CATALOG_1_URI.toString(),
+          DocBookResources.CATALOG_3_URI.toString())));
 }
