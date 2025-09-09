@@ -5,7 +5,8 @@ import java.net.URI;
 import org.docbook.xsltng.XslTNG;
 
 /**
- * Static resources found in the class path and public ids for use with a catalog, specific to DocBook XSLT 3, also known as xslTNG.
+ * Static resources found in the class path and public ids for use with a catalog, specific to
+ * DocBook XSLT 3, also known as xslTNG.
  */
 public class DocBookXslt3Resources {
   /** The public id URI of the DocBook to HTML XSLT 3 (xslTNG) document. */

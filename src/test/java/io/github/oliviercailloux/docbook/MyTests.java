@@ -24,7 +24,8 @@ public class MyTests {
   void testResources() throws Exception {
     assertNotNull(DocBookResources.XSD_5_0_URI);
     assertNotNull(DocBookResources.RNG_5_1_URI);
-    assertNotNull(MyTests.class.getResource("/io/github/oliviercailloux/docbook/xslt1/catalog.xml"));
+    assertNotNull(
+        MyTests.class.getResource("/io/github/oliviercailloux/docbook/xslt1/catalog.xml"));
     assertNotNull(DocBookXslt1Resources.CATALOG_XSLT_1_URI);
     assertNotNull(MyTests.class.getResource("xslt1/catalog.xml"));
     assertNotNull(MyTests.class.getResource("xslt1/fo/fo.xsl"));
@@ -55,8 +56,8 @@ public class MyTests {
 
   @Test
   void testXmlResolver1() throws Exception {
-    XMLResolverConfiguration config =
-        new XMLResolverConfiguration(ImmutableList.of(DocBookXslt1Resources.CATALOG_XSLT_1_URI.toString()));
+    XMLResolverConfiguration config = new XMLResolverConfiguration(
+        ImmutableList.of(DocBookXslt1Resources.CATALOG_XSLT_1_URI.toString()));
     URIResolver uriResolver = new XMLResolver(config).getURIResolver();
 
     assertTrue(uriResolver.resolve("http://cdn.docbook.org/release/xsl/1.79.2/fo/docbook.xsl", null)
@@ -67,14 +68,14 @@ public class MyTests {
 
   @Test
   void testXmlResolver3() throws Exception {
-    XMLResolverConfiguration config =
-        new XMLResolverConfiguration(ImmutableList.of(DocBookXslt3Resources.CATALOG_XSLT_3_URI.toString()));
+    XMLResolverConfiguration config = new XMLResolverConfiguration(
+        ImmutableList.of(DocBookXslt3Resources.CATALOG_XSLT_3_URI.toString()));
     URIResolver uriResolver = new XMLResolver(config).getURIResolver();
 
     assertEquals("https://cdn.docbook.org/release/xsl/1.79.2/fo/docbook.xsl", uriResolver
         .resolve("http://cdn.docbook.org/release/xsl/1.79.2/fo/docbook.xsl", null).getSystemId());
-    assertNull(uriResolver
-        .resolve("http://cdn.docbook.org/release/xsl/1.79.2/anythingreally", null));
+    assertNull(
+        uriResolver.resolve("http://cdn.docbook.org/release/xsl/1.79.2/anythingreally", null));
 
     SAXSource resolved = (SAXSource) uriResolver
         .resolve("https://cdn.docbook.org/release/xsltng/2.6.0/xslt/docbook.xsl", null);
@@ -89,8 +90,8 @@ public class MyTests {
   @Test
   void testXmlResolver1And3() throws Exception {
     URIResolver uriResolver = DocBookResources.XML_RESOLVER.getURIResolver();
-    assertNull(uriResolver
-        .resolve("http://cdn.docbook.org/release/xsl/1.79.2/anythingreally", null));
+    assertNull(
+        uriResolver.resolve("http://cdn.docbook.org/release/xsl/1.79.2/anythingreally", null));
 
     assertTrue(uriResolver.resolve("http://cdn.docbook.org/release/xsl/1.79.2/fo/docbook.xsl", null)
         .getSystemId().matches("file:/.*/fo/docbook.xsl"));

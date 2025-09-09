@@ -20,8 +20,10 @@ public class DocBookResources {
   public static final URI RNG_5_1_URI = URI.create(
       Resources.getResource(DocBookResources.class, DocBook.DOCBOOK_5_1_RNG_PATH).toString());
 
-  /** The DocBook XML resolver, reading from the XSLT 1 and 3 (xslTNG) catalogs from the class path */
-  public static XMLResolver XML_RESOLVER = new XMLResolver(
-      new XMLResolverConfiguration(ImmutableList.of(DocBookXslt1Resources.CATALOG_XSLT_1_URI.toString(),
+  /**
+   * The DocBook XML resolver, reading from the XSLT 1 and 3 (xslTNG) catalogs from the class path
+   */
+  public static XMLResolver XML_RESOLVER = new XMLResolver(new XMLResolverConfiguration(
+      ImmutableList.of(DocBookXslt1Resources.CATALOG_XSLT_1_URI.toString(),
           DocBookXslt3Resources.CATALOG_XSLT_3_URI.toString())));
 }
