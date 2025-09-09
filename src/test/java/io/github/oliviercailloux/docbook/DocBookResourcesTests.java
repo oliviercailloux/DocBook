@@ -24,8 +24,8 @@ public class DocBookResourcesTests {
   void testResources() throws Exception {
     assertNotNull(DocBookResources.XSD_5_0_URI);
     assertNotNull(DocBookResources.RNG_5_1_URI);
-    assertNotNull(
-        DocBookResourcesTests.class.getResource("/io/github/oliviercailloux/docbook/xslt1/catalog.xml"));
+    assertNotNull(DocBookResourcesTests.class
+        .getResource("/io/github/oliviercailloux/docbook/xslt1/catalog.xml"));
     assertNotNull(DocBookXslt1Resources.CATALOG_XSLT_1_URI);
     assertNotNull(DocBookResourcesTests.class.getResource("xslt1/catalog.xml"));
     assertNotNull(DocBookResourcesTests.class.getResource("xslt1/fo/fo.xsl"));

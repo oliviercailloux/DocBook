@@ -38,14 +38,14 @@ public class DocBookXslt3Resources {
    * Copies the XSLT 3 (xslTNG) resources to the specified directory. The given folder and its
    * parent folders will be created if required. Sub-folders <code>css</code> and <code>js</code>
    * will be created if they do not exist already.
-   * 
+   *
    * @param targetDirectory the directory to which the resources are copied
    * @throws IOException if an I/O error occurs
    */
   public static void copyResourcesTo(Path targetDirectory) throws IOException {
     try (FileSystem fs = FileSystems.newFileSystem(RESOURCES_FOLDER_URI, ImmutableMap.of())) {
       onceOpenedCopyTo(targetDirectory);
-    } catch(@SuppressWarnings("unused") IllegalArgumentException e) {
+    } catch (@SuppressWarnings("unused") IllegalArgumentException e) {
       onceOpenedCopyTo(targetDirectory);
     }
   }

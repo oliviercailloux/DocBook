@@ -13,8 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class DocBookXslt3ResourcesTests {
-@SuppressWarnings("unused")
-private static final Logger LOGGER = LoggerFactory.getLogger(DocBookXslt3ResourcesTests.class);
+  @SuppressWarnings("unused")
+  private static final Logger LOGGER = LoggerFactory.getLogger(DocBookXslt3ResourcesTests.class);
 
   @Test
   void testCopyResourcesManually() throws Exception {
@@ -23,20 +23,19 @@ private static final Logger LOGGER = LoggerFactory.getLogger(DocBookXslt3Resourc
       Path copied = target.getPath("copied/");
       PathUtils.copyRecursively(root, copied);
       assertTrue(Files.exists(copied.resolve("css/").resolve("docbook.css")));
-      assertTrue(Files.exists(
-          copied.resolve("js/").resolve("controls.js")));
+      assertTrue(Files.exists(copied.resolve("js/").resolve("controls.js")));
     }
   }
 
   @Test
   void testCopyResources() throws Exception {
-    assertEquals("file", DocBookXslt3Resources.RESOURCES_FOLDER_URI.getScheme(), DocBookXslt3Resources.RESOURCES_FOLDER_URI.toString());
+    assertEquals("file", DocBookXslt3Resources.RESOURCES_FOLDER_URI.getScheme(),
+        DocBookXslt3Resources.RESOURCES_FOLDER_URI.toString());
     try (FileSystem target = Jimfs.newFileSystem()) {
       Path copied = target.getPath("copied/");
       DocBookXslt3Resources.copyResourcesTo(copied);
       assertTrue(Files.exists(copied.resolve("css/").resolve("docbook.css")));
-      assertTrue(Files.exists(
-          copied.resolve("js/").resolve("controls.js")));
+      assertTrue(Files.exists(copied.resolve("js/").resolve("controls.js")));
     }
   }
 }
