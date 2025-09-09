@@ -10,9 +10,9 @@ import org.docbook.xsltng.XslTNG;
 public class DocBookXslt3Resources {
   /** The public id URI of the DocBook to HTML XSLT 3 (xslTNG) document. */
   public static final URI XSLT_3_HTML_URI =
-      java.net.URI.create("https://cdn.docbook.org/release/xsltng/2.6.0/xslt/docbook.xsl");
+      URI.create("https://cdn.docbook.org/release/xsltng/2.6.0/xslt/docbook.xsl");
 
   /** The URI of the DocBook XSLT 3 (xslTNG) catalog in the class path */
   public static URI CATALOG_XSLT_3_URI =
-      java.net.URI.create(Resources.getResource(XslTNG.class, "catalog.xml").toString());
+      URI.create(Resources.getResource(XslTNG.class, "catalog.xml").toString());
 }
