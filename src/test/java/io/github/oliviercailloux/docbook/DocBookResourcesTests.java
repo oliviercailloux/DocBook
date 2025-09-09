@@ -16,19 +16,19 @@ import org.slf4j.LoggerFactory;
 import org.xmlresolver.XMLResolver;
 import org.xmlresolver.XMLResolverConfiguration;
 
-public class MyTests {
+public class DocBookResourcesTests {
   @SuppressWarnings("unused")
-  private static final Logger LOGGER = LoggerFactory.getLogger(MyTests.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(DocBookResourcesTests.class);
 
   @Test
   void testResources() throws Exception {
     assertNotNull(DocBookResources.XSD_5_0_URI);
     assertNotNull(DocBookResources.RNG_5_1_URI);
     assertNotNull(
-        MyTests.class.getResource("/io/github/oliviercailloux/docbook/xslt1/catalog.xml"));
+        DocBookResourcesTests.class.getResource("/io/github/oliviercailloux/docbook/xslt1/catalog.xml"));
     assertNotNull(DocBookXslt1Resources.CATALOG_XSLT_1_URI);
-    assertNotNull(MyTests.class.getResource("xslt1/catalog.xml"));
-    assertNotNull(MyTests.class.getResource("xslt1/fo/fo.xsl"));
+    assertNotNull(DocBookResourcesTests.class.getResource("xslt1/catalog.xml"));
+    assertNotNull(DocBookResourcesTests.class.getResource("xslt1/fo/fo.xsl"));
     assertTrue(DocBookXslt3Resources.CATALOG_XSLT_3_URI.toString()
         .matches("jar:file:/.*/docbook-xslTNG-2.6.0.jar!/org/docbook/xsltng/catalog.xml"));
   }
