@@ -44,9 +44,16 @@ public class DocBookXslt3Resources {
    */
   public static void copyResourcesTo(Path targetDirectory) throws IOException {
     try (FileSystem fs = FileSystems.newFileSystem(RESOURCES_FOLDER_URI, ImmutableMap.of())) {
-      Path root = Path.of(RESOURCES_FOLDER_URI);
-      LOGGER.info("Copying: {}.", Files.list(root).collect(ImmutableSet.toImmutableSet()));
-      PathUtils.copyRecursively(root, targetDirectory);
+      onceOpenedCopyTo(targetDirectory);
+    } catch(@SuppressWarnings("unused") IllegalArgumentException e) {
+      onceOpenedCopyTo(targetDirectory);
     }
+  }
+
+  private static void onceOpenedCopyTo(Path targetDirectory) throws IOException {
+    Path root = Path.of(RESOURCES_FOLDER_URI);
+    Files.createDirectories(targetDirectory);
+    LOGGER.info("Copying: {}.", Files.list(root).collect(ImmutableSet.toImmutableSet()));
+    PathUtils.copyRecursively(root, targetDirectory);
   }
 }
