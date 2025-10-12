@@ -100,6 +100,10 @@
                     <exclude>TODOS</exclude>
                     <exclude>VERSION</exclude>
                     <exclude>install.sh</exclude>
+                    <exclude>slides/slidy/.htaccess</exclude>
+                    <exclude>slides/slidy/styles/.htaccess</exclude>
+                    <exclude>slides/slidy/scripts/.htaccess</exclude>
+                    <exclude>slides/slidy/help/.htaccess</exclude>
                   </excludes>
                 </resource>
               </resources>
